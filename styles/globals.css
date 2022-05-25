@@ -1,16 +1,163 @@
-html,
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    @font-face {
+        font-family: 'Nunito';
+        font-weight: 400;
+        font-style: normal;
+        src: url(/fonts/Nunito/Nunito-Regular.woff) format('woff');
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Nunito';
+        font-weight: 400;
+        font-style: italic;
+        src: url(/fonts/Nunito/Nunito-Italic.woff) format('woff');
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Nunito';
+        font-weight: 700;
+        font-style: normal;
+        src: url(/fonts/Nunito/Nunito-Bold.woff) format('woff');
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Nunito';
+        font-weight: 700;
+        font-style: italic;
+        src: url(/fonts/Nunito/Nunito-BoldItalic.woff) format('woff');
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Nunito';
+        font-weight: 300;
+        font-style: normal;
+        src: url(/fonts/Nunito/Nunito-Light.woff) format('woff');
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Nunito';
+        font-weight: 300;
+        font-style: italic;
+        src: url(/fonts/Nunito/Nunito-LightItalic.woff) format('woff');
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'PlayfairDisplay';
+        font-weight: 400;
+        font-style: normal;
+        src: url(/fonts/PlayfairDisplay/PlayfairDisplay-Regular.woff)
+            format('woff');
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'PlayfairDisplay';
+        font-weight: 400;
+        font-style: italic;
+        src: url(/fonts/PlayfairDisplay/PlayfairDisplay-Italic.woff)
+            format('woff');
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'PlayfairDisplay';
+        font-weight: 700;
+        font-style: normal;
+        src: url(/fonts/PlayfairDisplay/PlayfairDisplay-Bold.woff)
+            format('woff');
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'PlayfairDisplay';
+        font-weight: 700;
+        font-style: italic;
+        src: url(/fonts/PlayfairDisplay/PlayfairDisplay-BoldItalic.woff)
+            format('woff');
+        font-display: swap;
+    }
+}
+
+@layer utilities {
+    .p-dynamic {
+        padding: calc((100vw + 5rem) / 21);
+    }
+    .px-dynamic {
+        padding-right: calc((100vw + 5rem) / 21);
+        padding-left: calc((100vw + 5rem) / 21);
+    }
+    .py-dynamic {
+        padding-top: calc((100vw + 5rem) / 21);
+        padding-bottom: calc((100vw + 5rem) / 21);
+    }
+    .m-dynamic {
+        margin: calc((100vw + 5rem) / 21);
+    }
+    .mx-dynamic {
+        margin-right: calc((100vw + 5rem) / 21);
+        margin-left: calc((100vw + 5rem) / 21);
+    }
+    .my-dynamic {
+        margin-top: calc((100vw + 5rem) / 21);
+        margin-bottom: calc((100vw + 5rem) / 21);
+    }
+    .bg-image {
+        position: relative;
+        overflow: none;
+    }
+    .bg-image::before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: cover;
+    }
+    .bg-shadow {
+        position: 'relative';
+    }
+    .bg-shadow::after {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: black;
+        opacity: 0.7;
+    }
+    .tall-underline {
+        position: relative;
+        overflow: none;
+        display: inline;
+    }
+    .tall-underline::before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0.5rem;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0) 50%,
+            #78350f 50%
+        );
+        z-index: -1;
+    }
+}
+
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    @apply bg-white font-sans antialiased text-amber-900 scroll-smooth;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
+input {
+    @apply border-2 border-amber-400 rounded-md w-full outline-none focus:ring-1 focus:ring-amber-800 focus:border-amber-800 placeholder-amber-600 transition-all duration-200 disabled:bg-amber-100;
 }

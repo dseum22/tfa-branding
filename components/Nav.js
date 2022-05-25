@@ -20,6 +20,10 @@ const pages = [
         href: '/enroll',
     },
     {
+        name: 'Partner',
+        href: '/partner',
+    },
+    {
         name: 'Volunteer',
         href: '/volunteer',
     },
@@ -65,6 +69,7 @@ const Nav = () => {
         window.addEventListener('resize', updateLogo)
         return () => window.removeEventListener('resize', updateLogo)
     }, [])
+    useEffect(() => setOpen(false), [pathname])
     const _template = {
         pages: pages.map(page => (
             <Link key={page.name} href={page.href}>
@@ -82,7 +87,7 @@ const Nav = () => {
         )),
     }
     return (
-        <nav className="fixed h-20 w-full py-3 px-dynamic bg-primary-200 flex justify-between lg:justify-start z-30">
+        <nav className="fixed h-20 w-full py-3 px-dynamic bg-primary-200 flex justify-between lg:justify-start z-30 shadow">
             <button
                 type="button"
                 className="flex lg:hidden items-center justify-center p-2 rounded-md hover:bg-primary-hover focus:outline-none"
@@ -111,30 +116,39 @@ const Nav = () => {
                 </svg>
             </button>
             <div className="absolute left-1/2 transform -translate-x-1/2 lg:static lg:transform-none">
-                <Image
-                    src={logo.source}
-                    alt="Logo"
-                    height={logo.height}
-                    width={logo.width}
-                />
+                <Link href="/">
+                    <a>
+                        <Image
+                            src={logo.source}
+                            alt="Logo"
+                            height={logo.height}
+                            width={logo.width}
+                        />
+                    </a>
+                </Link>
             </div>
-            <div className="lg:grow flex items-center justify-between lg:px-dynamic">
-                <div className="gap-3 hidden lg:flex">{_template.pages}</div>
-                <div>
+            <div className="lg:grow items-center justify-between hidden lg:flex">
+                <div className="ml-6 flex gap-3">{_template.pages}</div>
+                <Link href="/donate">
+                    <a className="inline-block uppercase font-bold py-3 px-4 rounded-md bg-amber-400 text-lg transition-transform duration-300 hover:scale-105 ease-in-out tracking-wider">
+                        Donate
+                    </a>
+                </Link>
+            </div>
+            <div
+                className={classNames(
+                    !open && 'hidden',
+                    'lg:hidden absolute top-20 left-0 w-full pt-8 pb-10 px-dynamic bg-primary-200 flex flex-col gap-2'
+                )}
+            >
+                {_template.pages}
+                <div className="flex justify-center">
                     <Link href="/donate">
                         <a className="inline-block uppercase font-bold py-3 px-4 rounded-md bg-amber-400 text-lg transition-transform duration-300 hover:scale-105 ease-in-out tracking-wider">
                             Donate
                         </a>
                     </Link>
                 </div>
-            </div>
-            <div
-                className={classNames(
-                    !open && 'hidden',
-                    'lg:hidden absolute top-20 left-0 w-full pt-8 pb-10 px-dynamic bg-primary-200 flex flex-col gap-3'
-                )}
-            >
-                {_template.pages}
             </div>
         </nav>
     )
