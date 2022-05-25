@@ -2,10 +2,17 @@ import Banner from '../components/Banner'
 import InlineLink from '../components/InlineLink'
 import Section from '../components/Section'
 import SubjectForm from '../components/forms/SubjectForm'
+import Head from 'next/head'
 
 const About = () => {
     return (
         <>
+            <Head>
+                <link
+                    rel="canonical"
+                    href="https://tutoringforall.org/about"
+                ></link>
+            </Head>
             <Banner className="before:bg-[url('../public/images/banners/about.jpg')]">
                 <Banner.Title className="tall-underline">About</Banner.Title>
                 <Banner.Content>

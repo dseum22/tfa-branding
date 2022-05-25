@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import Head from 'next/head'
 import Banner from '../components/Banner'
 import InlineLink from '../components/InlineLink'
 import Section from '../components/Section'
@@ -6,6 +6,12 @@ import Section from '../components/Section'
 const Donate = () => {
     return (
         <>
+            <Head>
+                <link
+                    rel="canonical"
+                    href="https://tutoringforall.org/donate"
+                ></link>
+            </Head>
             <Banner className="before:bg-[url('../public/images/banners/donate.jpg')]">
                 <Banner.Title className="tall-underline">Donate</Banner.Title>
                 <Banner.Content>

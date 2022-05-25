@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import Link from 'next/link'
 import Banner from '../components/Banner'
 import InlineLink from '../components/InlineLink'
@@ -6,6 +7,9 @@ import Section from '../components/Section'
 const Home = () => {
     return (
         <>
+            <Head>
+                <link rel="canonical" href="https://tutoringforall.org/"></link>
+            </Head>
             <Banner className="before:bg-[url('../public/images/banners/home.jpg')]">
                 <Banner.Title>
                     <mark className="rounded-lg px-3">Free&nbsp;tutoring</mark>{' '}

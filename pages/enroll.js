@@ -1,10 +1,17 @@
 import Banner from '../components/Banner'
 import Section from '../components/Section'
 import InlineLink from '../components/InlineLink'
+import Head from 'next/head'
 
 const Enroll = () => {
     return (
         <>
+            <Head>
+                <link
+                    rel="canonical"
+                    href="https://tutoringforall.org/enroll"
+                ></link>
+            </Head>
             <Banner className="before:bg-[url('../public/images/banners/enroll.jpg')]">
                 <Banner.Title className="tall-underline">Enroll</Banner.Title>
                 <Banner.Content>

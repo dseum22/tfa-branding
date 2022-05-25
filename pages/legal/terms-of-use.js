@@ -1,8 +1,15 @@
+import Head from 'next/head'
 import Section from '../../components/Section'
 
 const TermsOfUse = () => {
     return (
         <>
+            <Head>
+                <link
+                    rel="canonical"
+                    href="https://tutoringforall.org/legal/terms-of-use"
+                ></link>
+            </Head>
             <Section className="bg-primary-100">
                 <Section.Title>Terms of use.</Section.Title>
                 <Section.Content>

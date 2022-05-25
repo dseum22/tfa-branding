@@ -1,9 +1,16 @@
 import Section from '../../components/Section'
 import InlineLink from '../../components/InlineLink'
+import Head from 'next/head'
 
 const PrivacyPolicy = () => {
     return (
         <>
+            <Head>
+                <link
+                    rel="canonical"
+                    href="https://tutoringforall.org/legal/privacy-policy"
+                ></link>
+            </Head>
             <Section className="bg-primary-100">
                 <Section.Title>Privacy policy.</Section.Title>
                 <Section.Content>

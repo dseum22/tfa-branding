@@ -1,10 +1,17 @@
 import Banner from '../components/Banner'
 import Section from '../components/Section'
 import Alert from '../components/Alert'
+import Head from 'next/head'
 
 const Volunteer = () => {
     return (
         <>
+            <Head>
+                <link
+                    rel="canonical"
+                    href="https://tutoringforall.org/volunteer"
+                ></link>
+            </Head>
             <Banner className="before:bg-[url('../public/images/banners/volunteer.jpg')]">
                 <Banner.Title className="tall-underline">
                     Volunteer
