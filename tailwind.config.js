@@ -19,11 +19,6 @@ module.exports = {
                     hover: '#fde68a',
                 },
             },
-            backgroundImage: theme => ({
-                'image-home': "url('../public/images/fillers/home.png')",
-                'image-about': "url('../public/images/fillers/about.jpg')",
-                'image-enroll': "url('../public/images/fillers/enroll.jpg')",
-            }),
         },
     },
     plugins: [],
