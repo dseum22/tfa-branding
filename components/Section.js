@@ -41,14 +41,14 @@ Section.Disclosure = props => {
             <Disclosure>
                 {({ open }) => (
                     <>
-                        <Disclosure.Button className="flex items-center w-full justify-between rounded-md bg-amber-100 px-4 py-2 font-bold hover:bg-amber-200 focus:outline-none text-left">
+                        <Disclosure.Button className="flex items-center gap-2 w-full justify-between rounded-md bg-amber-100 px-4 py-2 font-bold hover:bg-amber-200 focus:outline-none text-left">
                             <span className="text-xl md:text-2xl lg:text-3xl">
                                 {_template.title}
                             </span>
                             <ChevronUpIcon
                                 className={classNames(
                                     open && 'rotate-180 transform',
-                                    'h-10 w-10'
+                                    'h-10 w-10 shrink-0'
                                 )}
                             />
                         </Disclosure.Button>
